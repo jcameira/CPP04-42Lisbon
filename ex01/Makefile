@@ -1,4 +1,4 @@
-NAME 				= 	diamondtrap
+NAME 				= 	set_on_fire
 
 CC 					= 	c++
 CFLAGS 				= 	-Wall -Wextra -Werror -g -std=c++98

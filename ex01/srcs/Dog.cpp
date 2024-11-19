@@ -15,24 +15,50 @@
 Dog::Dog( void ): Animal() {
     std::cout << "Dog Default Constructor called" << std::endl;
     this->_type = "Dog";
+    this->_brain = new Brain();
 }
 
 Dog::Dog( const Dog &copy ): Animal( copy ) {
     std::cout << "Dog Copy Constructor called" << std::endl;
+    this->_brain = new Brain( *copy._brain );
+    *this = copy;
 }
 
 Dog::~Dog( void ) {
     std::cout << "Dog Destructor called" << std::endl;
+    delete this->_brain;
 }
 
 Dog  &Dog::operator=( const Dog &obj ) {
     std::cout << "Dog Assignment operator called" << std::endl;
     if ( this != &obj ) {
         this->_type = obj._type;
+        *this->_brain = *obj._brain;
     }
     return ( *this );   
 }
 
 void    Dog::makeSound( void ) const {
     std::cout << this->getType() << " Barks!" << std::endl;
+}
+
+void    Dog::printIdeas( void ) const {
+    std::string idea;
+    std::cout << "Dog's ideas:" << std::endl;
+    for ( int i = 0; i < 100; i++ ) {
+        idea = this->_brain->getIdea( i );
+        if ( idea.length() ) {
+            std::cout << idea << std::endl;
+        }
+    }
+}
+
+void    Dog::giveIdea( std::string idea ) {
+    for ( int i = 0; i < 100; i++ ) {
+		if ( this->_brain->getIdea( i ) == "" ) {
+			this->_brain->setIdea( i, idea );
+			return;
+		}
+	}
+	std::cout << "Brain of dog is full!" << std::endl;
 }
