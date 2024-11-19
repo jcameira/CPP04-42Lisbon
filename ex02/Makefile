@@ -1,7 +1,7 @@
-NAME 				= 	diamondtrap
+NAME 				= 	abstract
 
-CC 					= 	c++
-CFLAGS 				= 	-Wall -Wextra -Werror -g -std=c++98
+CXX 				= 	c++
+CXXFLAGS 			= 	-Wall -Wextra -Werror -g -std=c++98
 IFLAGS				=	-I $(INCLUDES)
 SANITIZE 			= 	--fsanitize=address
 AR 					= 	ar rcs
@@ -22,18 +22,18 @@ TOTAL_OBJS			=	$(words $(wildcard $(OBJ_DIR)*))
 FILES				=	0
 
 $(OBJ_DIR)%.o: 		$(SRCS_PATH)%.cpp
-					@$(CC) $(CFLAGS) $(IFLAGS) $(DEFAULT_INCLUDES) -c $< -o $@ && \
+					@$(CXX) $(CXXFLAGS) $(IFLAGS) $(DEFAULT_INCLUDES) -c $< -o $@ && \
 					$(eval FILES=$(shell echo $$(($(FILES) + 1)))) \
 					$(call PRINT_PROGRESS,$(TOTAL_SRCS),$(GRN),$(YELLOW)Compiling$(DEFAULT) $@)
 
 all:				$(NAME)
 
 $(NAME):			$(OBJ_DIR) $(OBJS) 
-					@$(CC) $(CFLAGS) $(IFLAGS) $(ALL_OBJECTS) $(EXTRA_LIBS) -o $@
+					@$(CXX) $(CXXFLAGS) $(IFLAGS) $(ALL_OBJECTS) $(EXTRA_LIBS) -o $@
 					@echo "\033[2F\033[0K$(CYAN)$@$(DEFAULT) successfully created\033[E"
 
 sanitize:			$(OBJ_DIR) $(OBJS)
-					@$(CC) $(CFLAGS) $(SANITIZE) $(ALL_OBJECTS) -o $(NAME)
+					@$(CXX) $(CXXFLAGS) $(SANITIZE) $(ALL_OBJECTS) -o $(NAME)
 					@echo "\033[2F\033[0K$(CYAN)$(NAME)$(DEFAULT) successfully created\033[E"
 
 $(OBJ_DIR):
