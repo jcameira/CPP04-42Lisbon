@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 21:26:59 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/26 14:04:58 by jcameira         ###   ########.fr       */
+/*   Created: 2024/11/26 14:44:56 by jcameira          #+#    #+#             */
+/*   Updated: 2024/11/26 14:48:27 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <AMateria.hpp>
+#include <Ice.hpp>
 
-AMateria::AMateria( void ) {
+Ice::Ice( void ){
+    this->_type = "ice";
 }
 
-AMateria::AMateria( std::string const &type ): _type( type ) {
-}
-
-AMateria::AMateria( const AMateria &copy ) {
+Ice::Ice( const Ice &copy ) {
     *this = copy;
 }
 
-AMateria::~AMateria( void ) {
+Ice::~Ice( void ) {
 }
 
-AMateria    &AMateria::operator=( const AMateria &obj ) {
-    if ( this != &obj ) {
-        this->_type = obj.getType();
-    }
+Ice    &Ice::operator=( const Ice &obj ) {
+    ( void )obj;
     return ( *this );
 }
 
-std::string const   &AMateria::getType( void ) const {
-    return ( this->_type );
+AMateria    *Ice::clone( void ) const {
+    return ( new Ice( *this ) );
+}
+
+void    use( ICharacter& target ) {
+    std::cout << "* heals " << target.getName() << "'s wounds*" << std::endl;
 }

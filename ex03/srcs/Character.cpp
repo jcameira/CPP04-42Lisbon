@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 21:26:59 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/26 14:04:58 by jcameira         ###   ########.fr       */
+/*   Created: 2024/11/26 16:01:07 by jcameira          #+#    #+#             */
+/*   Updated: 2024/11/26 16:33:36 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <AMateria.hpp>
+#include <Character.hpp>
 
-AMateria::AMateria( void ) {
+Character::Character( void ) {
 }
 
-AMateria::AMateria( std::string const &type ): _type( type ) {
-}
-
-AMateria::AMateria( const AMateria &copy ) {
+Character::Character( const Character &copy ) {
     *this = copy;
 }
 
-AMateria::~AMateria( void ) {
+Character::~Character( void ) {
+    for ( int i = 0; i < 4; i++ ) {
+        if ( this->_inventory[ i ] ) {
+            delete this->_inventory[ i ];
+        }
+    }
 }
 
-AMateria    &AMateria::operator=( const AMateria &obj ) {
+Character   &Character::operator=( const Character &obj ) {
     if ( this != &obj ) {
-        this->_type = obj.getType();
+        this->_name = obj.getName();
     }
     return ( *this );
 }
 
-std::string const   &AMateria::getType( void ) const {
-    return ( this->_type );
+
+
+std::string const   &Character::getName( void ) const {
+    return ( this->_name );
 }

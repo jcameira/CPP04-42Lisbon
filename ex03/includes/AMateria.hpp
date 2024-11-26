@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:53:49 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/19 21:19:05 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/26 16:00:57 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class AMateria {
     public:
         AMateria( void );
-        AMateria( std::string const & type );
+        AMateria( std::string const &type );
         AMateria( const AMateria &Copy );
         virtual ~AMateria( void );
 
