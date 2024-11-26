@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 20:54:50 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/26 16:00:20 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/26 19:25:51 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Character: public ICharacter {
         void use( int idx, ICharacter& target );
 
         std::string const &getName( void ) const;
+
+        void    setName( std::string const &name );
 
     private:
         AMateria    *_inventory[ 4 ];

@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:01:07 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/26 16:33:36 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/26 19:26:01 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,8 @@ Character   &Character::operator=( const Character &obj ) {
 
 std::string const   &Character::getName( void ) const {
     return ( this->_name );
+}
+
+void    Character::setName( std::string const &name ) {
+    this->_name = name;
 }
