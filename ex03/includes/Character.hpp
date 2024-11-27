@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 20:54:50 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/26 19:25:51 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/27 12:52:59 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Character: public ICharacter {
     public:
         Character( void );
+        Character( const std::string &name );
         Character( const Character &copy );
         ~Character( void );
 
