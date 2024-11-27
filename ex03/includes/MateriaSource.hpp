@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 12:59:36 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/27 13:03:48 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:47:12 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ class MateriaSource: public IMateriaSource {
         void        learnMateria( AMateria *obj );
         AMateria    *createMateria( std::string const &type );
     
+    private:
+        AMateria *_memory[ 4 ];
+
 };
 
 #endif

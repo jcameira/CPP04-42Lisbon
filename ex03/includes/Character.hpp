@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 20:54:50 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/27 12:52:59 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/27 20:15:07 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,15 @@ class Character: public ICharacter {
 
         Character &Character::operator=( const Character &obj );
 
-        void equip( AMateria* m );
+        void equip( AMateria *m );
         void unequip( int idx );
-        void use( int idx, ICharacter& target );
+        void use( int idx, ICharacter &target );
 
         std::string const &getName( void ) const;
 
         void    setName( std::string const &name );
+
+        
 
     private:
         AMateria    *_inventory[ 4 ];

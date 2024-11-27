@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:01:07 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/27 12:58:39 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/27 19:26:06 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,19 @@ void    Character::use( int i, ICharacter &target ) {
     }
     else {
         std::cout << "There is no Materia in the chosen slot!" << std::endl;
+    }
+}
+
+void    Character::equip( AMateria *m ) {
+    if ( !m ) {
+        std::cout << "Materia doesn't exist!" << std::endl;
+        return ;
+    }
+    for ( int i; i < 4; i++ ) {
+        if ( !this->_inventory[ i ] ) {
+            this->_inventory[ i ] = m;
+            std::cout << this->getName() << " equiped Materia " << this->_inventory[ i ]->getType() << " !" << std::endl;
+        }
     }
 }
 
