@@ -6,17 +6,17 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:25:22 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/27 20:09:39 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/28 18:55:41 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Cure.hpp>
 
-Cure::Cure( void ){
+Cure::Cure( void ) {
     this->_type = "cure";
 }
 
-Cure::Cure( const Cure &copy ) {
+Cure::Cure( const Cure &copy ): AMateria( copy ) {
     *this = copy;
 }
 

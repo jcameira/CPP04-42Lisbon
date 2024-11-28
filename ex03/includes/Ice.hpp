@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 20:43:02 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/26 14:45:55 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:04:34 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Ice: public AMateria {
         Ice( const Ice &copy );
         virtual ~Ice( void );
 
-        Ice &Ice::operator=( const Ice &obj );
+        Ice &operator=( const Ice &obj );
         
         AMateria    *clone( void ) const;
         void        use( ICharacter& target );

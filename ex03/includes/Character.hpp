@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 20:54:50 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/27 20:15:07 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:59:16 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Character: public ICharacter {
         Character( const Character &copy );
         ~Character( void );
 
-        Character &Character::operator=( const Character &obj );
+        Character &operator=( const Character &obj );
 
         void equip( AMateria *m );
         void unequip( int idx );

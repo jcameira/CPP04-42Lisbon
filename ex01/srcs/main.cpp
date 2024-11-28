@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 21:32:56 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/19 01:04:42 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:35:22 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,13 @@ int main() {
 				<< "\033[35m--- Making a deep copy ---" << std::endl
 				<< std::endl;
 
-	Cat *cat3 = new Cat( *cat2 );
+	Cat cat3 = Cat( *cat2 );
 	cat2->giveIdea( "Gotta sleep now..." );
 	std::cout << std::endl;
 	cat2->printIdeas();
 	std::cout << std::endl;
-	cat3->printIdeas();
+	delete cat2;
+	cat3.printIdeas();
 	std::cout << std::endl;
 
 	std::cout << std::endl
@@ -75,12 +76,12 @@ int main() {
 	std::cout << "New Cat" << std::endl << std::endl;
 	Cat *cat4 = new Cat();
 	std::cout << std::endl <<"Assigning cat 3 to cat 4" << std::endl << std::endl;
-	*cat4 = *cat3;
+	*cat4 = cat3;
 	std::cout << std::endl ;
 	cat4->printIdeas();
 	std::cout << std::endl;
-	cat3->giveIdea( "No sleeping now!!!" );
-	cat3->printIdeas();
+	cat3.giveIdea( "No sleeping now!!!" );
+	cat3.printIdeas();
 	std::cout << std::endl;
 	cat4->printIdeas();
 	std::cout << std::endl;
@@ -89,8 +90,8 @@ int main() {
 				<< "\033[39m--- Destruction ---" << std::endl
 				<< std::endl;
 
-	delete cat2;
-	delete cat3;
+	//delete cat2;
+	//delete cat3;
 	delete cat4;
 	return ( 0 );
 }

@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 20:45:53 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/26 14:36:13 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:04:38 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cure: public AMateria {
         Cure( const Cure &copy );
         virtual ~Cure( void );
 
-        Cure &Cure::operator=( const Cure &obj );
+        Cure &operator=( const Cure &obj );
         
         AMateria    *clone( void ) const;
         void        use( ICharacter& target );

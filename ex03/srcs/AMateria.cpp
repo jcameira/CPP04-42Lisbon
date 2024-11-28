@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 21:26:59 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/26 14:04:58 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:11:27 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ AMateria    &AMateria::operator=( const AMateria &obj ) {
         this->_type = obj.getType();
     }
     return ( *this );
+}
+
+void    AMateria::use( ICharacter &target ) {
+    ( void )target;
 }
 
 std::string const   &AMateria::getType( void ) const {

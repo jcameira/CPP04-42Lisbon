@@ -6,14 +6,14 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:35:10 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/27 18:37:12 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/28 19:25:51 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <MateriaSource.hpp>
 
 MateriaSource::MateriaSource( void ) {
-    for ( int i; i < 3; i++ ) {
+    for ( int i = 0; i < 4; i++ ) {
         this->_memory[ i ] = NULL;
     }
 }
@@ -31,14 +31,15 @@ MateriaSource::~MateriaSource( void ) {
 }
 
 MateriaSource   &MateriaSource::operator=( const MateriaSource &obj ) {
-    for ( int i; i < 3; i++ ) {
+    ( void )obj;
+    for ( int i = 0; i < 4; i++ ) {
         this->_memory[ i ] = NULL;
     }
     return ( *this );
 }
 
 void    MateriaSource::learnMateria( AMateria *obj ) {
-    for ( int i; i < 3; i++ ) {
+    for ( int i = 0; i < 4; i++ ) {
         if ( !this->_memory[ i ] ) {
             this->_memory[ i ] = obj;
             std::cout << "Materia " << obj->getType() << " was learned!" << std::endl;
@@ -54,7 +55,7 @@ AMateria    *MateriaSource::createMateria( std::string const &type ) {
         std::cout << "Couldn't create Materia " << type << ", unknown type!" << std::endl;
         return ( NULL );
     }
-    for ( int i; i < 3; i++ ) {
+    for ( int i = 0; i < 4; i++ ) {
         if ( this->_memory[ i ] && this->_memory[ i ]->getType() == type ) {
             std::cout << "Created Materia " << type << " !" << std::endl;
             return ( this->_memory[ i ]->clone() );
