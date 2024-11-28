@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 21:02:07 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/28 20:09:24 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/28 22:35:38 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,11 @@ int main( void ) {
 		AMateria *temp = attacks->createMateria("ice");
 
 		me->equip(temp);
-		delete temp;
 		Character *enemy = new Character("enemy");
 		me->use(0, *enemy);
 		me->use(1, *enemy);
 		me->use(2, *enemy);
 		me->use(3, *enemy);
-
 
 		delete attacks;
 		delete heals;

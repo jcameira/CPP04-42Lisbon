@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:01:07 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/28 20:25:08 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/28 22:30:52 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void    Character::equip( AMateria *m ) {
     }
     for ( int i = 0; i < 4; i++ ) {
         if ( !this->_inventory[ i ] ) {
-            this->_inventory[ i ] = m->clone();
+            this->_inventory[ i ] = m;
             std::cout << this->getName() << " equiped Materia " << this->_inventory[ i ]->getType() << " !" << std::endl;
             return ;
         }
