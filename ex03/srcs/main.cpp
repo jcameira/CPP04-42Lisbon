@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 21:02:07 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/28 22:35:38 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/29 11:03:32 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 int main( void ) {
 	// subject main
 	{
+		std::cout << "\033[33m";
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
@@ -35,15 +36,16 @@ int main( void ) {
 		me->use(0, *bob);
 		me->use(1, *bob);
 
-		me->unequip(1); //extra added by be to test unequip
-		delete tmp; // as per the subject requirements unequip doesn't clear memory so we need to clean it manually
-
+		me->unequip(1);
+		
+		delete tmp;
 		delete bob;
 		delete me;
 		delete src;
 	}
 	// my tests 1
 	{
+		std::cout << "\033[32m" << std::endl;
 		IMateriaSource *attacks = new MateriaSource();
 		attacks->learnMateria(new Ice());
 
@@ -72,6 +74,7 @@ int main( void ) {
 	}
 	// Materia Source tests
 	{
+		std::cout << "\033[31m" << std::endl;
 		IMateriaSource *materiaSource = new MateriaSource();
 		materiaSource->learnMateria(new Ice());
 		materiaSource->learnMateria(new Cure());
@@ -79,31 +82,30 @@ int main( void ) {
 		AMateria *temp = materiaSource->createMateria("ice");
 
 		delete temp;
-
 		delete materiaSource;
 	}
 	// Deep Copy tests
 	{
+		std::cout << "\033[34m" << std::endl;
 		IMateriaSource *materiaSource = new MateriaSource();
 		materiaSource->learnMateria(new Ice());
 		materiaSource->learnMateria(new Cure());
 		Character  *t1 = new Character("me");
 		t1->equip(materiaSource->createMateria("cure"));
 		t1->equip(materiaSource->createMateria("ice"));
-		// Testing if its possible to create an invalid materia;
 		t1->equip(materiaSource->createMateria("asd"));
-		// creating some deep copies
 		Character t2;
 		t2 = *t1;
 		Character *t3 = new Character(*t1);
 		t1->use(0, t2);
 		t1->use(1, t2);
 		t1->use(2, t2);
-		delete t1; // deleting the t1 pointer, if the copy wasn't deep, trying to use the materias from t3 would cause a segfault;
+		delete t1;
 		t3->use(0, t2);
 		t2.use(1, *t3);
 		t2.use(2, *t3);
 		delete materiaSource;
 		delete t3;
+		std::cout << "\033[39m";
 	}
 }

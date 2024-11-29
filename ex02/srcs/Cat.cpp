@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 21:33:24 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/28 17:39:11 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/29 10:56:39 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat( void ): AAnimal() {
     this->_brain = new Brain();
 }
 
-Cat::Cat( const Cat &copy ): Animal( copy ) {
+Cat::Cat( const Cat &copy ): AAnimal( copy ) {
     std::cout << "Cat Copy Constructor called" << std::endl;
     this->_brain = new Brain( *copy._brain );
     this->_type = copy._type;

@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 21:32:56 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/19 17:26:27 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/29 10:57:44 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int main() {
 	std::cout << std::endl;
 	cat2->printIdeas();
 	std::cout << std::endl;
+	delete cat2;
 	cat3->printIdeas();
 	std::cout << std::endl;
 
@@ -74,6 +75,8 @@ int main() {
 
 	std::cout << "New Cat" << std::endl << std::endl;
 	Cat *cat4 = new Cat();
+	cat4->giveIdea( "I wanna play..." );
+	cat4->printIdeas();
 	std::cout << std::endl <<"Assigning cat 3 to cat 4" << std::endl << std::endl;
 	*cat4 = *cat3;
 	std::cout << std::endl ;
@@ -89,7 +92,6 @@ int main() {
 				<< "\033[39m--- Destruction ---" << std::endl
 				<< std::endl;
 
-	delete cat2;
 	delete cat3;
 	delete cat4;
 	return ( 0 );

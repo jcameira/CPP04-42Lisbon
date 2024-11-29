@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 21:33:24 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/28 17:30:51 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/29 10:46:00 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ Cat::Cat( const Cat &copy ): Animal( copy ) {
 }
 
 Cat::~Cat( void ) {
-    std::cout << "Cat Destructor called" << std::endl;
     delete this->_brain;
+    std::cout << "Cat Destructor called" << std::endl;
 }
 
 Cat  &Cat::operator=( const Cat &obj ) {

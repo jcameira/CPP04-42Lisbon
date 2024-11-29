@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 21:33:43 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/28 17:33:21 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/29 10:46:04 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ Dog::Dog( const Dog &copy ): Animal( copy ) {
 }
 
 Dog::~Dog( void ) {
-    std::cout << "Dog Destructor called" << std::endl;
     delete this->_brain;
+    std::cout << "Dog Destructor called" << std::endl;
 }
 
 Dog  &Dog::operator=( const Dog &obj ) {

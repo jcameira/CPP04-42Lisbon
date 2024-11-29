@@ -6,7 +6,7 @@
 /*   By: jcameira <jcameira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 01:07:32 by jcameira          #+#    #+#             */
-/*   Updated: 2024/11/18 01:15:54 by jcameira         ###   ########.fr       */
+/*   Updated: 2024/11/29 10:40:06 by jcameira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongAnimal {
     public:
         WrongAnimal( void );
         WrongAnimal( const WrongAnimal &copy );
-        virtual ~WrongAnimal( void );
+        ~WrongAnimal( void );
 
         WrongAnimal  &operator=( const WrongAnimal &obj );
 
